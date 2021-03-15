@@ -8,8 +8,8 @@
       <Projects/>
       <OpenPositions/>
       <Team/>
-      <Footer/>
     </div>
+    <Footer/>
   </div>
 </template>
 
