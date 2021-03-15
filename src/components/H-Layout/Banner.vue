@@ -17,13 +17,16 @@
     <div :class='BannerImage'>
       <img src='../../assets/BannerImage.png'/>
     </div>
+    <Updates />
   </div>
 </template>
 
 <script>
 import { defineComponent } from '@vue/composition-api';
+import Updates from './Updates.vue';
 
 export default defineComponent({
+  components: { Updates },
   name: 'Banner',
   data() {
     return {
