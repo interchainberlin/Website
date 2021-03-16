@@ -1,13 +1,12 @@
 <template>
-  <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   <div :class='App'>
     <Navbar/>
     <div :class='AppContainer'>
-      <Banner/>
+      <Banner :projects='projects' />
       <About/>
-      <Projects/>
-      <OpenPositions/>
-      <Team/>
+      <Projects :projects='projects' />
+      <OpenPositions :jobs='jobs' />
+      <Team :teams='teams' />
     </div>
     <Footer/>
   </div>
@@ -15,7 +14,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-// import HelloWorld from './components/HelloWorld.vue';
+import axios from 'axios';
+
 import Navbar from './components/H-Layout/Navbar.vue';
 import Banner from './components/H-Layout/Banner.vue';
 import About from './components/H-Layout/About.vue';
@@ -28,7 +28,6 @@ import Footer from './components/H-Layout/Footer.vue';
 export default defineComponent({
   name: 'App',
   components: {
-    // HelloWorld
     Navbar,
     Banner,
     About,
@@ -41,18 +40,37 @@ export default defineComponent({
     return {
       App: 'w-screen',
       AppContainer: 'xl:container xl:mx-auto p-5',
+      projects: [], 
+      jobs: [],
+      teams: [],
+      error: 'value not found',
     }
-  }
+  },
+  async mounted () {
+    try {
+      const getProjects = await axios.get('http://localhost:1337/projects')
+      this.projects = getProjects.data
+
+      const getJobs = await axios.get('http://localhost:1337/jobs')
+      this.jobs = getJobs.data
+
+      const getTeams = await axios.get('http://localhost:1337/teams')
+      this.teams = getTeams.data
+
+    } catch (error) {
+      this.error = error;
+    }
+  }, 
 });
 </script>
 
 <style>
-/* #app {
+#app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   margin-top: 60px;
-} */
+}
 </style>

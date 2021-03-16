@@ -4,14 +4,15 @@
       <div :class='BannerHeader'>
         <h1 :class='header'>Welcome to <br/> Interchain GmbH</h1>
         <p :class='subheader'>Building the internet of blockchains</p>
-        <div :class='BannerProjectLinks'>
+        <div :class='BannerProject'>
           <img src='../../assets/Cube.png'/>
           <p>We are the maintainers of — </p>
-          <!-- <img /> Map through project Icons --> 
-          <a> Cosmos </a>
-          <a> Tendermint Core </a>
-          <a> IBC </a>
-          <a> Gaia </a>
+        </div>
+        <div :class='BannerProject'>
+          <!-- Map through projects from projects API --> 
+          <div v-for='project in projects' :key='project.id'>
+            <a :class='link' :href='project.URL' target='_blank'>{{project.Title}}</a>
+          </div>
         </div>
       </div>
 
@@ -30,6 +31,9 @@ import Updates from './Updates.vue';
 export default defineComponent({
   components: { Updates },
   name: 'Banner',
+  props: {
+    projects: Object,
+  },
   data() {
     return {
       BannerContainer: 'h-full items-center mt-72 mb-60',
@@ -39,9 +43,11 @@ export default defineComponent({
       header: 'text-6xl',
       subheader: 'text-4xl',
 
-      BannerProjectLinks: 'flex flex-wrap space-x-3',
+      BannerProject: 'flex flex-wrap space-x-3',
+      ProjectLinks: '',
       BannerImage: 'w-1/2',
+      link: 'hover:text-blue-500', 
     }
-  }
+  },
 })
 </script>

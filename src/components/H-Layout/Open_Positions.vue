@@ -15,21 +15,34 @@
       </div>
       <p :class='bodyBold'>Open positions</p>
       <hr/>
-      <!-- Map through open roles from OpenPositions DB -->
-      <div :class='Role'>
-        <p>Positions</p>
-        <p>Remote (US/EU timezones)</p>
+      <!-- Map through open roles from jobs API -->
+      <div :class='Roles' v-for='job in jobs' :key='job.id'>
+        <div :class='Role + RoleHover'>
+          <span>
+            <p>{{job.Position}}</p>
+            <p>{{job.Location}}</p>
+          </span>
+          <Button title='Apply' :href='job.Apply' />
+        </div>
+        <br/>
+        <hr/>
       </div>
-      <hr/>
     </div>
   </div>
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api';
+import Button from './Button';
 
 export default defineComponent({
   name: 'OpenPositions',
+  components: {
+    Button,
+  },
+  props: {
+    jobs: Object,
+  },
   data() {
     return {
       OpenPositionsContainer: 'p-2 flex flex-wrap justify-between items-center my-40',
@@ -38,8 +51,10 @@ export default defineComponent({
       subheader: 'text-4xl',
       body: 'text-base', 
       bodyBold: 'font-bold',
-      Role: 'flex flex-wrap justify-between items-center',
+      Roles: '',
+      Role: 'flex flex-wrap justify-between items-center', 
+      RoleHover: 'hover:border', // 'hover:bg-gray-800 hover:text-white hover:p-2',
     }
-  }
+  },
 })
 </script>

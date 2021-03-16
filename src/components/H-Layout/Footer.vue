@@ -50,7 +50,7 @@ export default defineComponent({
       Icon: 'w-8 mb-5',
       Content: 'p-20 w-1/2 border-r border-gray-500 flex flex-col flex-wrap justify-center items-center content-center space-y-6',
       Info: 'p-20',
-      InfoContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between',
+      InfoContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-center space-x-10',
 
       body1: 'font-bold',
       body2: 'font-light',
