@@ -2,14 +2,18 @@
   <div :class='FooterContainer'>
     <div :class='SocailMedia'>
       <div :class='Content + Discord'>
-        <img :class='Icon' src='https://www.freepnglogos.com/uploads/discord-logo-png/seven-kingdoms-9.png' alt='Discord Logo'/>
+        <a href=''  target='_blank'>
+          <img :class='Icon' src='https://www.freepnglogos.com/uploads/discord-logo-png/seven-kingdoms-9.png' alt='Discord Logo'/>
+        </a>
         <p :class='body1'>Be part of the journey</p>
         <p :class='body2'>Join our Discord community <br/> to shape the future</p>
       </div>
        <div :class='Content + Twitter'>
-        <img :class='Icon' src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' alt='Discord Logo'/>
+        <a href='https://twitter.com/interchain_io' target='_blank' >
+          <img :class='Icon' src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' alt='Discord Logo'/>
+        </a>
         <p :class='body1'>Stay up to date</p>
-        <p :class='body2'>Follow @Interchain_io to get <br/> the latest updates. </p>
+        <p :class='body2'>Follow <a href='https://twitter.com/interchain_io' target='_blank'> @Interchain_io </a> to get <br/> the latest updates. </p>
       </div>
     </div>
 

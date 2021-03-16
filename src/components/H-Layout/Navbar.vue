@@ -3,12 +3,18 @@
     <div :class='IGNav'>
       <div :class='IGContainer'>
         <div :class='Container'>
-          <img :class='Logo' src='../../assets/Logo.svg'/>
+          <img :class='Icon' src='../../assets/Logo.svg'/>
           <p :class='header'>Interchain GmbH</p>
         </div>
         <div :class='Container'>
           <p :class='subheader'>Team</p>
-          <Button title='We are hiring'/>
+          <a href='https://github.com/interchainberlin' target='_blank' >
+            <img :class='Icon' src='../../assets/GithubGray.png'/>
+          </a>
+          <a href='https://interchain-io.medium.com' target='_blank' >
+            <img :class='Icon' src='../../assets/Medium_logo.svg.png'/>
+          </a>
+          <Button title='We are hiring' url='https://interchain-gmbh.breezy.hr/'/>
         </div>
       </div>
     </div>
@@ -39,7 +45,7 @@ export default defineComponent({
       IGNav: 'bg-gray-800',
       IGContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between items-center',
       Container: 'flex flex-wrap items-center space-x-6',
-      Logo: 'w-8', 
+      Icon: 'w-7 rounded-full', 
       ICFBanner: 'bg-black',
       ICFContainer: 'xl:container xl:mx-auto p-2',
 
