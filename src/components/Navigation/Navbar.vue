@@ -7,7 +7,7 @@
           <p :class='header'>Interchain GmbH</p>
         </div>
         <!-- Media querie Menu component -->
-        <!-- <Menu :class='ContainerMobile'/> -->
+        <Menu v-show='tablet ? !showMenu : showMenu' />
       </div>
     </div>
 
@@ -17,13 +17,13 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api';
-// import Menu from './Menu.vue';
+import Menu from './Menu.vue';
 import ICFBanner from '../Banners/ICFBanner.vue';
 
 export default defineComponent({
   name: 'Navbar',
   components: {
-    // Menu,
+    Menu,
     ICFBanner, 
   },
   data() {
@@ -37,7 +37,25 @@ export default defineComponent({
       ContainerMobile: 'invisible md:visible',
       Container: 'md:visible flex flex-wrap items-center space-x-6 ',
       Icon: 'w-7 rounded-full',  
+
+      showMenu: true,
+      mobile: window.innerWidth <= 450,
+      tablet: window.innerWidth <= 900,
+      laptop: window.innerWidth <= 1250,
+      desktop: window.innerWidth <= Infinity,
     }
+  },
+  // methods:{ 
+  //   handleView() {
+  //     this.mobile = window.innerWidth <= 450;
+  //     this.tablet = window.innerWidth <= 900;
+  //     this.laptop = window.innerWidth <= 1250;
+  //     this.desktop = window.innerWidth <= Infinity;
+  //   }
+  // },
+  MediaQueries(tablet) {
+    // this.handleView(); 
+    window.addEventListener('resize', tablet);
   }
 })
 </script>
