@@ -28,9 +28,9 @@ export default defineComponent({
   data () {
     return {
       ProjectsContainer: 'p-2 flex flex-col flex-wrap my-40 space-y-5',
-      ProjectList: 'grid grid-cols-2 gap-10 my-10 ...',
+      ProjectList: 'grid grid-cols-1 md:grid-cols-2 gap-10 my-10 ...',
       Card: 'bg-gray-100 flex flex-col flex-wrap',
-      Tag: 'w-3/5 bg-solid-blue text-white text-center text-md p-1 ',
+      Tag: 'w-4/5 md:w-3/5 bg-solid-blue text-white text-center text-md p-1 ',
       TagGradient: 'hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-300',
       Profile: 'bg-gray-50 w-28',
       Info: 'space-y-10 p-8',

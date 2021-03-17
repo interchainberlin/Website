@@ -11,7 +11,7 @@
     </div>
     <div :class='Content'>
       <div :class='RightContent'>
-        <img src='../../assets/Globe.png'/>
+        <img :class='IMG' src='../assets/Globe.png'/>
       </div>
       <p :class='bodyBold'>Open positions</p>
       <hr/>
@@ -22,7 +22,7 @@
             <p>{{job.Position}}</p>
             <p>{{job.Location}}</p>
           </span>
-          <Button title='Apply' :href='job.Apply' />
+          <a :class='link' :href='job.Apply'> Apply → </a>
         </div>
         <br/>
         <hr/>
@@ -33,27 +33,27 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api';
-import Button from './Button';
 
 export default defineComponent({
   name: 'OpenPositions',
-  components: {
-    Button,
-  },
   props: {
     jobs: Object,
   },
   data() {
     return {
       OpenPositionsContainer: 'p-2 flex flex-wrap justify-between items-center my-40',
-      Content: 'w-2/5 space-y-5',
-      RightContent: 'flex flex-wrap justify-end',
+      Content: 'w-full md:w-2/5 space-y-5',
+      RightContent: 'flex flex-wrap justify-center md:justify-end p-20 md:p-0',
+
       subheader: 'text-4xl',
       body: 'text-base', 
       bodyBold: 'font-bold',
+
       Roles: '',
-      Role: 'flex flex-wrap justify-between items-center', 
-      RoleHover: 'hover:border', // 'hover:bg-gray-800 hover:text-white hover:p-2',
+      Role: 'flex flex-wrap flex-col md:flex-row justify-between md:items-center ', 
+      RoleHover: 'hover:border-2', // 'hover:bg-gray-800 hover:text-white hover:p-2',
+
+      link: 'font-bold text-solid-blue',
     }
   },
 })

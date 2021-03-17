@@ -19,15 +19,15 @@ import Vue from 'vue'
 import { defineComponent } from 'vue';
 import axios from 'axios';
 
-import Navbar from './components/H-Layout/Navbar.vue';
-// import Banner from './components/H-Layout/Banner.vue';
-import BannerMobile from './components/H-Layout/BannerMobile.vue';
-import Updates from './components/H-Layout/Updates.vue';
-import About from './components/H-Layout/About.vue';
-import Projects from './components/H-Layout/Projects.vue'; 
-import OpenPositions from './components/H-Layout/Open_Positions.vue';
-import Team from './components/H-Layout/Team.vue'; 
-import Footer from './components/H-Layout/Footer.vue';
+import Navbar from './components/Navigation/Navbar.vue';
+// import Banner from './components/Banner.vue';
+import BannerMobile from './components/Banners/BannerMobile.vue';
+import Updates from './components/Updates.vue';
+import About from './components/About.vue';
+import Projects from './components/Projects.vue'; 
+import OpenPositions from './components/Open_Positions.vue';
+import Team from './components/Team.vue'; 
+import Footer from './components/Navigation/Footer.vue';
 
 // How do I set up media queries? 
 
@@ -94,8 +94,6 @@ export default defineComponent({
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

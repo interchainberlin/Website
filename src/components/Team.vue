@@ -7,7 +7,6 @@
       <div :class='TeamList'>
         <div :class='Card' v-for='team in teams' :key='team.id'>
           <!-- <img :class='Profile' :src='apiUrl + team.Profile[0].url'> -->
-          <!-- <img :class='Profile' src='../../assets/User.png'> -->
           <img :class='Profile' :src='team.ProfileURL'/>
           <div :class='Info'>
             <p :class='body1'>{{team.FirstName}} {{team.LastName}}</p>
@@ -30,11 +29,11 @@ export default defineComponent({
   },
   data() {
     return {
-      TeamContainer: 'p-2 flex flex-col flex-wrap my-40 space-y-5',
-      TeamList: 'grid grid-cols-3 gap-10 my-10 ...',
-      Card: 'hover:border hover:border-solid-blue flex flex-wrap',
+      TeamContainer: 'p-2 flex flex-col flex-wrap my-40 ',
+      TeamList: 'grid grid-cols-2 md:grid-cols-3 gap-10 my-10 ',
+      Card: 'hover:border hover:border-solid-blue flex flex-wrap space-y-5 md:space-y-0',
       Profile: 'bg-gray-50 w-28',
-      Info: 'w-3/5 px-5',
+      Info: 'w-3/5 sm:pl-2 md:px-5',
 
 
       subheader: 'text-4xl',
