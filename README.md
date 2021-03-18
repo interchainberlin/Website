@@ -14,7 +14,7 @@
 
 ---
 
-<img scr="./src/assets/MobileView.png" />
+<img scr="./src/assets/MobileView.png" width=auto height=auto/>
 
 ## Project setup
 
