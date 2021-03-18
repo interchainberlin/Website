@@ -3,7 +3,7 @@
     <Navbar />
     <div :class='AppContainer'>
       <Banner :projects='projects' />
-      <Updates />
+      <Updates :articles='articles'/>
       <About />
       <Projects :projects='projects' />
       <OpenPositions :jobs='jobs' />
@@ -47,6 +47,7 @@ export default defineComponent({
       projects: [], 
       jobs: [],
       teams: [],
+      articles: [],
       error: 'value not found',
       
     }
@@ -61,6 +62,9 @@ export default defineComponent({
 
       const getTeams = await axios.get(`${this.VUE_APP_API_URL}/teams`)
       this.teams = getTeams.data
+
+      const getArticles = await axios.get(`${this.VUE_APP_API_URL}/articles`)
+      this.articles = getArticles.data
 
     } catch (error) {
       this.error = error;
