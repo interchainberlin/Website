@@ -1,21 +1,7 @@
 <template>
   <div :class='FooterContainer'>
-    <div :class='SocailMedia'>
-      <div :class='Content + Discord'>
-        <a href='https://discord.com/invite/vcExX9T'  target='_blank'>
-          <img :class='Icon' src='https://www.freepnglogos.com/uploads/discord-logo-png/seven-kingdoms-9.png' alt='Discord Logo'/>
-        </a>
-        <p :class='body1'>Be part of the journey</p>
-        <p :class='body2'>Join our Discord community <br/> to shape the future</p>
-      </div>
-       <div :class='Content + Twitter'>
-        <a href='https://twitter.com/interchain_io' target='_blank' >
-          <img :class='Icon' src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' alt='Discord Logo'/>
-        </a>
-        <p :class='body1'>Stay up to date</p>
-        <p :class='body2'>Follow <a href='https://twitter.com/interchain_io' target='_blank'> @Interchain_io </a> to get <br/> the latest updates. </p>
-      </div>
-    </div>
+
+    <!-- <SocailMedia /> -->
 
     <hr/>
 
@@ -29,9 +15,17 @@
           <p :class='body2'>Questions? Get in touch at</p>
           <a :class='link' href='mailto:contact@interchain.berlin'>contact@interchain.berlin</a>
         </div>
-        <div :class='Newsletter'>
+        <div :class='SocailMediaContainer'>
           <!-- Import Newsleter <script/> -->
-          Newsletter coming soon
+          <a href='https://twitter.com/interchain_io' target='_blank'>
+            <img :class='Icon' src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' alt='Twitter'/>
+          </a>
+          <a href='https://github.com/interchainberlin' target='_blank' >
+            <img :class='Icon' src='../../assets/GithubGray.png' alt='Github'/>
+          </a>
+          <a href='https://interchain-io.medium.com' target='_blank' >
+            <img :class='Icon' src='../../assets/Medium_logo.svg.png' alt='Medium'/>
+          </a>
         </div>
       </div>
     </div>
@@ -39,14 +33,18 @@
 </template>
 
 <script>
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api';
+// import SocailMedia from './SocialMedia.vue';
 
 export default defineComponent({
   name: 'Footer',
+  components: {
+    // SocailMedia,
+  },
   data() {
     return {
       FooterContainer: 'bg-black text-white ...',
-      SocailMedia: 'flex flex-wrap flex-col md:flex-row justify-center items-center md:text-center',
+      SocailMediaContainer: 'flex flex-wrap justify-between items-center space-x-6 pt-2 md:pt-0',
       Icon: 'w-8 mb-5',
       Content: 'p-20 md:w-1/2 md:border-r md:border-gray-500 flex flex-col flex-wrap justify-center md:items-center md:content-center space-y-6',
       Info: 'p-20',
