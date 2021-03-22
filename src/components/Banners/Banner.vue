@@ -62,7 +62,7 @@ export default defineComponent({
       BannerProject: 'flex flex-col flex-wrap space-y-5',
       ProjectLinks: '',
       BannerImage: 'w-0 md:w-2/5 ',
-      Icon: 'w-8 rounded-full ',
+      Icon: 'w-8 h-8 rounded-full ',
       link: 'flex flex-wrap space-x-5 hover:text-blue-500 hover:border hover:border-2-solid-blue ', 
     }
   },

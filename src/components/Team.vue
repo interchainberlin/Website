@@ -36,7 +36,7 @@ export default defineComponent({
       TeamContainer: 'p-2 flex flex-col flex-wrap my-40 ',
       TeamList: 'grid grid-cols-2 md:grid-cols-3 gap-10 my-10 ',
       Card: 'hover:border hover:border-solid-blue flex flex-wrap space-y-5 md:space-y-0',
-      Profile: 'bg-gray-50 w-28',
+      Profile: 'bg-gray-50 w-28 h-28',
       Info: 'w-3/5 sm:pl-2 md:px-5',
 
 
