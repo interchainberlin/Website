@@ -32,7 +32,7 @@ export default defineComponent({
     return {
       UpdateContainerMobile:
         'bg-gray-50 rounded-lg border flex flex-col flex-wrap p-5 space-y-3 ',
-      UpdateContainerWeb: 'md:flex-row md:space-x-6',
+      UpdateContainerWeb: 'md:flex-row md:space-x-6 md:items-center',
       UpdateTag:
         'text-white text-center bg-gradient-to-r from-gray-800 to-gray-300 hover:bg-solid-blue p-2 px-6 rounded-lg w-2/5 md:w-auto',
       body1: 'font-bold',
