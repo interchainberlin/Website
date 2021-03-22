@@ -5,7 +5,8 @@
      <br/>
      <!-- Map through teams from teams API -->
       <div :class='TeamList'>
-        <div :class='Card' v-for='team in teams' :key='team.id'>
+        <!-- <div :class='Card' v-for='team in teams' :key='team.id'> -->
+        <div :class='Card' v-for='team in TeamsData' :key='team.id'>
           <!-- <img :class='Profile' :src='apiUrl + team.Profile[0].url'> -->
           <img :class='Profile' :src='team.ProfileURL'/>
           <div :class='Info'>
@@ -21,6 +22,7 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api';
+import { TeamsData } from '../data/TeamsData.js';
 
 export default defineComponent({
   name: 'Team',
@@ -29,6 +31,8 @@ export default defineComponent({
   },
   data() {
     return {
+      TeamsData: TeamsData, 
+
       TeamContainer: 'p-2 flex flex-col flex-wrap my-40 ',
       TeamList: 'grid grid-cols-2 md:grid-cols-3 gap-10 my-10 ',
       Card: 'hover:border hover:border-solid-blue flex flex-wrap space-y-5 md:space-y-0',
