@@ -5,8 +5,8 @@
      <br/>
      <!-- Map through teams from teams API -->
       <div :class='TeamList'>
-        <!-- <div :class='Card' v-for='team in teams' :key='team.id'> -->
-        <div :class='Card' v-for='team in TeamsData' :key='team.id'>
+        <div :class='Card' v-for='team in teams' :key='team.id'> 
+        <!-- <div :class='Card' v-for='team in TeamsData' :key='team.id'> -->
           <!-- <img :class='Profile' :src='apiUrl + team.Profile[0].url'> -->
           <img :class='Profile' :src='team.ProfileURL'/>
           <div :class='Info'>
