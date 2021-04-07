@@ -1,6 +1,5 @@
 <template>
   <div :class='Menu'>
-    <!-- <p :class='subheader'>Team</p> -->
     <a href='https://github.com/interchainberlin' target='_blank' >
       <img :class='Icon' src='../../assets/GithubGray.png'/>
     </a>

@@ -15,6 +15,7 @@
     "core-js": "^3.6.5",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "v-switch-case": "^1.0.3",
     "vue": "^3.0.0",
     "vue-mq": "1.0.1"
   },

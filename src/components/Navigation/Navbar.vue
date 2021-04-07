@@ -7,10 +7,12 @@
           <p :class='header'>Interchain GmbH</p>
         </div>
 
-        <hr/>
-
+        <br/>
+        
+        <div :class='Container'>
         <!-- Media querie Menu component -->
-        <Menu :class='Container' v-show='tablet ? !showMenu : showMenu' />
+        <Menu class='menu' v-show='tablet ? !showMenu : showMenu' />
+        </div>
       </div>
     </div>
 
@@ -22,9 +24,6 @@
 import { defineComponent } from '@vue/composition-api';
 import Menu from './Menu.vue';
 import ICFBanner from '../Banners/ICFBanner.vue';
-
-const showMenu = true;
-const tablet = window.matchMedia('(max-width: 900px)');
 
 export default defineComponent({
   name: 'Navbar',
@@ -41,8 +40,10 @@ export default defineComponent({
       IGNav: 'bg-gray-800',
       IGContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between items-center space-y-5 md:space-y-0 divide-y md:divide-y-0',
       Container: 'w-full md:w-auto ',
-      Logo: 'md:visible flex flex-wrap items-center space-x-6 ',
-      Icon: 'w-7 rounded-full',  
+      Logo: ' md:visible flex flex-wrap items-center space-x-6 ',
+      Icon: 'w-7 rounded-full',
+      
+      size: 'tablet',
 
       showMenu: true,
       mobile: window.innerWidth <= 450,
@@ -51,9 +52,12 @@ export default defineComponent({
       desktop: window.innerWidth <= Infinity,
     }
   },
-  // computed: {
-  //   showMenu: showMenu,
-  //   tablet: tablet,
-  // },
 })
 </script>
+
+<style>
+@media (max-width: 900px) {
+ .menu {visibility: hidden;}
+ .menu {display: none;}
+}
+</style>
