@@ -6,7 +6,6 @@
       <hr />
       <p :class="body1">ICF Update — March 15th</p>
       <p :class="body2">Interchain Foundation</p>
-      <!-- I don't know why these two lines are breaking the app :( -->
       <!-- <p :class="body1">{{ newArticle.Title }}</p>
       <p :class="body2">{{ newArticle.Author }}</p> -->
       <a :class="link" href="https://interchain-io.medium.com/" target="_blank">
