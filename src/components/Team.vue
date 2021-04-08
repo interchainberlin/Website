@@ -28,7 +28,6 @@ export default defineComponent({
   name: 'Team',
   props: {
     teamMembers: Object,
-    teamLists: Object,
   },
   data() {
     return {

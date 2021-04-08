@@ -1,13 +1,13 @@
 <template>
-  <div :class='App'>
+  <div :class="App">
     <Navbar />
-    <div :class='AppContainer'>
-      <Banner :projects='projects' :contributions='contributions'/>
-      <Updates :articles='articles'/>
+    <div :class="AppContainer">
+      <Banner :projects="projects" :contributions="contributions" />
+      <Updates :articles="articles" />
       <About />
-      <Projects :projects='projects' :contributions='contributions'/>
-      <OpenPositions :jobs='jobs' />
-      <Team :teamMembers='teamMembers' :teamLists='teamLists'/>
+      <Projects :projects="projects" :contributions="contributions" />
+      <OpenPositions :jobs="jobs" />
+      <Team :teamMembers="teamMembers" />
     </div>
     <Footer />
   </div>
@@ -21,9 +21,9 @@ import Navbar from './components/Navigation/Navbar.vue';
 import Banner from './components/Banners/Banner.vue';
 import Updates from './components/Updates.vue';
 import About from './components/About.vue';
-import Projects from './components/Projects.vue'; 
+import Projects from './components/Projects.vue';
 import OpenPositions from './components/Open_Positions.vue';
-import Team from './components/Team.vue'; 
+import Team from './components/Team.vue';
 import Footer from './components/Navigation/Footer.vue';
 
 export default defineComponent({
@@ -46,38 +46,36 @@ export default defineComponent({
       VUE_APP_API_URL: process.env.VUE_APP_API_URL,
       contributions: [],
       jobs: [],
-      projects: [], 
-      teamLists: [],
+      projects: [],
       teamMembers: [],
       articles: [],
       error: 'value not found',
-      
-    }
+    };
   },
-  async mounted () {
+  async mounted() {
     try {
-      const getContributions = await axios.get(`${this.VUE_APP_API_URL}/contributions`)
-      this.contributions = getContributions.data
+      const getContributions = await axios.get(
+        `${this.VUE_APP_API_URL}/contributions`
+      );
+      this.contributions = getContributions.data;
 
-      const getJobs = await axios.get(`${this.VUE_APP_API_URL}/jobs`)
-      this.jobs = getJobs.data
+      const getJobs = await axios.get(`${this.VUE_APP_API_URL}/jobs`);
+      this.jobs = getJobs.data;
 
-      const getProjects = await axios.get(`${this.VUE_APP_API_URL}/projects`)
-      this.projects = getProjects.data
+      const getProjects = await axios.get(`${this.VUE_APP_API_URL}/projects`);
+      this.projects = getProjects.data;
 
-      const getTeamLists = await axios.get(`${this.VUE_APP_API_URL}/teamLists`)
-      this.teamLists = getTeamLists.data
+      const getTeamMembers = await axios.get(
+        `${this.VUE_APP_API_URL}/teamMembers`
+      );
+      this.teamMembers = getTeamMembers.data;
 
-      const getTeamMembers = await axios.get(`${this.VUE_APP_API_URL}/teamMembers`)
-      this.teamMembers = getTeamMembers.data
-
-      const getArticles = await axios.get(`${this.VUE_APP_API_URL}/articles`)
-      this.articles = getArticles.data
-
+      const getArticles = await axios.get(`${this.VUE_APP_API_URL}/articles`);
+      this.articles = getArticles.data;
     } catch (error) {
       this.error = error;
     }
-  }, 
+  },
 });
 </script>
 
