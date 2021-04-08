@@ -17,6 +17,9 @@
         </div>
         <div :class='SocailMediaContainer'>
           <!-- Import Newsleter <script/> -->
+          <a href='https://www.linkedin.com/company/interchain-gmbh' target='_blank'>
+            <img :class='Icon' src='https://image.flaticon.com/icons/png/512/174/174857.png' alt='LinkedIn'/>
+          </a>
           <a href='https://twitter.com/interchain_io' target='_blank'>
             <img :class='Icon' src='https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-4.png' alt='Twitter'/>
           </a>
