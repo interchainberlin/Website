@@ -38,7 +38,7 @@ export default defineComponent({
       subheader: 'text-white text-sm',
 
       IGNav: 'bg-gray-800',
-      IGContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between items-center space-y-5 md:space-y-0 divide-y md:divide-y-0',
+      IGContainer: 'xl:container xl:mx-auto p-2 flex flex-wrap justify-between items-center space-y-5 md:space-y-0 ',
       Container: 'w-full md:w-auto ',
       Logo: ' md:visible flex flex-wrap items-center space-x-6 ',
       Icon: 'w-7 rounded-full',
