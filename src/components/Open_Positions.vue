@@ -17,7 +17,6 @@
       <hr/>
       <!-- Map through open roles from jobs API -->
       <div :class='Roles' v-for='job in jobs' :key='job.id'>
-      <!-- <div :class='Roles' v-for='job in JobsData' :key='job.id'> -->
         <div :class='Role + RoleHover'>
           <span>
             <p>{{job.Position}}</p>
@@ -34,7 +33,6 @@
 
 <script>
 import { defineComponent } from '@vue/composition-api';
-import { JobsData } from '../data/JobsData.js';
 
 export default defineComponent({
   name: 'OpenPositions',
@@ -43,8 +41,6 @@ export default defineComponent({
   },
   data() {
     return {
-      JobsData: JobsData,
-
       OpenPositionsContainer: 'p-2 flex flex-wrap justify-between items-center my-40',
       Content: 'w-full md:w-2/5 space-y-5',
       RightContent: 'flex flex-wrap justify-center md:justify-end p-20 md:p-0',
